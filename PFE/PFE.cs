@@ -6,7 +6,7 @@ namespace PFE
 {
     public class Plugin : Plugin<Config>
     {
-		public override string Author { get; } = "Wafel & Cyanox";
+		public override string Author { get; } = "Cyanox";
 		public override string Name { get; } = "PFE";
 		public override string Prefix { get; } = "PFE";
 		public override Version Version { get; } = new Version(3, 1, 0);

@@ -18,7 +18,9 @@ namespace PFE
                 {
 					for (int i = 0; i < Plugin.Singleton.Config.Magnitude; i++)
 					{
-						new ExplosiveGrenade(ItemType.GrenadeHE, ev.Target) { FuseTime = Plugin.Singleton.Config.Delay }.SpawnActive(ev.Target.Position, ev.Target);
+						ExplosiveGrenade grenade = (ExplosiveGrenade)Item.Create(ItemType.GrenadeHE);
+						grenade.FuseTime = 0.3f;
+						grenade.SpawnActive(ev.Target.Position, ev.Target);
 						Log.Debug($"SCP-173 ({ev.Target.Nickname}) has exploded ({ev.Target.Position}) with a {Plugin.Singleton.Config.Delay} delay.", Plugin.Singleton?.Config?.Debug ?? false);
 					}
 				}
